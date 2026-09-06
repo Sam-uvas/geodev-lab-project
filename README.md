@@ -54,7 +54,7 @@ The solar resource dataset used in the project has a 2018 reference period.
 
 ### 4. Wind Resource
 
-Wind resource data will be used to investigate the relationship between wind-energy development and wind-resource availability.
+Wind resource data will be used to investigate the relationship between wind energy development and wind esource availability.
 
 **Source:** Wind Atlas for South Africa (WASA)
 
@@ -84,13 +84,13 @@ The dataset contains several technology categories, including:
 - Biomass/Biofuels
 - Petroleum
 
-The initial distribution shows that wind and solar PV account for the majority of the renewable-energy records in the dataset.
+The initial distribution shows that wind and solar PV account for the majority of the renewable energy records in the dataset.
 
 This provides the starting point for investigating the spatial and temporal development of renewable energy across the Eastern Cape.
 
 ## Project Direction
 
-The project will use GIS to investigate the relationship between renewable-energy development and the spatial characteristics of the province.
+The project will use GIS to investigate the relationship between renewable energy development and the spatial characteristics of the province.
 
 The analysis will focus on:
 
@@ -102,7 +102,7 @@ The analysis will focus on:
 - The relationship between projects and solar resources
 - The relationship between projects and electricity infrastructure
 
-The resulting spatial patterns will be used to investigate areas that may warrant further consideration for future renewable-energy development.
+The resulting spatial patterns will be used to investigate areas that may warrant further consideration for future renewable energy development.
 
 ## Week 1
 
