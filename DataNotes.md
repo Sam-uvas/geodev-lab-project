@@ -1,46 +1,52 @@
-# Week 02 Data Note
+# Week 02 — Data Notes
 
 ## Renewable Energy Development in the Eastern Cape
 
-This data note documents the datasets collected for the Renewable Energy Development in the Eastern Cape project.
+This document records the datasets collected for the Renewable Energy Development in the Eastern Cape project.
 
-The datasets were selected to investigate the spatial distribution of renewable-energy development and its relationship with renewable resources, terrain and electricity infrastructure.
+The datasets were selected to support the investigation of the spatial distribution of renewable-energy development and its relationship with environmental conditions, terrain and electricity infrastructure.
 
-The data has been sourced from external providers and prepared or inspected in QGIS and Google Earth Engine where applicable.
+Environmental raster datasets were processed using Google Earth Engine and exported as GeoTIFF files for inspection and analysis in QGIS.
 
 ---
 
 # 1. Renewable Energy EIA Applications
 
-## Dataset
+### Dataset
 
 Renewable Energy EIA Applications
 
-## Source
+### Source
 
 Department of Forestry, Fisheries and the Environment (DFFE)
 
-## Source Link
+### Source Link
 
 https://www.dffe.gov.za/egis
 
-## Purpose
+### Purpose
 
-This is the core project dataset. It represents renewable-energy-related EIA applications and provides the observed locations and attributes of renewable-energy development.
+This is the main project dataset. It contains renewable-energy project and EIA application information and provides the observed locations of renewable-energy development.
 
-The dataset will be used to investigate where renewable-energy development has occurred, which technologies are represented, and how development varies spatially and temporally.
+The dataset will be used to investigate:
 
-## Geometry Type
+- Where renewable-energy projects are located
+- Which technologies are represented
+- How projects are distributed spatially
+- How development has changed over time
+- How development varies between municipalities
+
+### Geometry Type
 
 Point
 
-## Feature Count
+### Feature Count
 
-254 records were identified within the Eastern Cape during initial data exploration.
+**254 records** were identified within the Eastern Cape during initial exploration.
 
-## Key Attributes
+### Key Attributes
 
-Important information available in the dataset includes:
+Important attributes include information relating to:
 
 - Technology type
 - Project information
@@ -48,11 +54,11 @@ Important information available in the dataset includes:
 - Application date
 - Project status
 - Municipality
-- Location information
+- Location
 
-## Technology Categories Observed
+### Technology Categories Observed
 
-The initial dataset exploration identified the following technology categories:
+The initial exploration identified:
 
 - Wind
 - Solar PV
@@ -60,369 +66,514 @@ The initial dataset exploration identified the following technology categories:
 - Biomass/Biofuels
 - Petroleum
 
-Wind and Solar PV account for the majority of the records identified in the Eastern Cape.
+### Data Quality Observations
 
-## Data Quality Observations
+The dataset contains multiple technology categories and project statuses.
 
-The dataset contains different project types and statuses, so the attributes will need to be checked for missing or inconsistent values before detailed analysis.
+Attributes should be checked for missing or inconsistent values before detailed analysis.
 
-Application records also represent project/development information and should not automatically be interpreted as completed operational facilities.
+Project/application records should also be distinguished from completed or operational facilities where applicable.
 
 ---
 
 # 2. Municipal Boundaries
 
-## Dataset
+### Dataset
 
-Eastern Cape Municipal Boundaries
+Municipal Boundaries
 
-## Source
+### Source
 
 Municipal Demarcation Board (MDB)
 
-## Source Link
+### Source Link
 
 https://www.demarcation.org.za/
 
-## Purpose
+### Purpose
 
 Municipal boundaries provide the administrative framework for the project.
 
 They will be used to:
 
-- Define the municipal geography of the Eastern Cape
+- Define municipal areas within the Eastern Cape
 - Determine which municipalities contain renewable-energy projects
-- Compare renewable-energy development between municipalities
-- Support spatial aggregation and analysis
+- Compare project distribution between municipalities
+- Support municipal-level spatial analysis
 
-## Geometry Type
+### Geometry Type
 
 Polygon
 
-## Feature Count
+### Feature Count
 
-To be recorded from the final QGIS layer properties.
+**To be confirmed from the QGIS layer properties.**
 
-## Key Attributes
+### Key Attributes
 
-Expected administrative attributes include:
+Relevant attributes include:
 
 - Municipality name
 - Municipality code
 - Administrative identifiers
 
-## Data Quality Observations
+### Data Quality Observations
 
-Municipality names and codes should be checked for missing or inconsistent values before using the boundaries for joins or aggregation.
+Municipality names and codes will be checked for missing or inconsistent values.
 
-The boundary dataset will also be checked to ensure that it correctly represents the Eastern Cape study area.
+The boundaries will also be checked to ensure that they correctly represent the Eastern Cape study area.
 
 ---
 
 # 3. Solar Radiation
 
-## Dataset
+### Dataset
 
-Eastern Cape Solar Radiation 2016–2025
+ERA5-Land Daily Aggregated
 
-## Source
+### Original Source
 
-Google Earth Engine processing using the selected solar-resource dataset.
+European Centre for Medium-Range Weather Forecasts (ECMWF)
 
-## Source / Dataset Reference
+### Google Earth Engine Collection
 
-The solar-resource data was processed in Google Earth Engine and exported as a GeoTIFF for use in QGIS.
+`ECMWF/ERA5_LAND/DAILY_AGGR`
 
-## Purpose
+### Variable Used
 
-The solar-radiation raster represents spatial variation in solar-resource intensity across the study area.
+`surface_solar_radiation_downwards_sum`
 
-It will be used to investigate whether Solar PV development is associated with areas receiving relatively higher solar radiation.
+### Period
 
-## Geometry Type
+2016–2025
+
+### Access and Processing
+
+The ERA5-Land dataset was accessed and processed using Google Earth Engine.
+
+The daily solar-radiation data was averaged over the 2016–2025 period, clipped to the Eastern Cape and converted from J/m²/day to kWh/m²/day.
+
+The resulting raster was exported as a GeoTIFF and opened in QGIS.
+
+### Purpose
+
+The dataset represents the spatial distribution of solar radiation and will be used to investigate the relationship between Solar PV development and solar-resource conditions.
+
+### Geometry Type
 
 Raster
 
-## Raster Bands
+### Raster Bands
 
 1
 
-## Raster Dimensions
+### Raster Dimensions
 
 75 × 43 pixels
 
-## Data Type
+### Data Type
 
 Float64
 
-## Compression
+### Compression
 
 LZW
 
-## Value Range
+### Value Range
 
-0 to approximately 5.848
+Approximately 0 to 5.848
 
-## Mean
+### Mean
 
 Approximately 4.871
 
-## Valid Pixels
+### Valid Pixels
 
 Approximately 53.98%
 
-## Data Quality Observations
+### Data Quality Observations
 
-Approximately 46.02% of the raster cells were identified as NoData/not valid during the initial QGIS inspection.
+Approximately 46.02% of raster cells were identified as NoData/not valid during the initial inspection.
 
-This will need to be investigated before the raster is used for detailed spatial analysis to determine whether the missing cells result from the processing extent, masking or the source dataset.
-
-## Reference Period
-
-2016–2025
+The NoData areas should be investigated before detailed analysis to determine whether they result from the processing extent, masking or the source dataset.
 
 ---
 
 # 4. Wind Speed
 
-## Dataset
+### Dataset
 
-Eastern Cape Mean Wind Speed 2016–2025
+ERA5-Land Hourly
 
-## Source
+### Original Source
 
-Google Earth Engine processing using the selected wind-resource dataset.
+European Centre for Medium-Range Weather Forecasts (ECMWF)
 
-## Source / Dataset Reference
+### Google Earth Engine Collection
 
-The wind-resource data was processed in Google Earth Engine and exported as a GeoTIFF for use in QGIS.
+`ECMWF/ERA5_LAND/HOURLY`
 
-## Purpose
-
-The wind-speed raster represents the spatial distribution of mean wind speed across the Eastern Cape.
-
-It will be used to investigate whether existing wind-energy development is associated with areas experiencing stronger wind conditions.
-
-## Geometry Type
-
-Raster
-
-## Raster Bands
-
-1
-
-## Raster Dimensions
-
-75 × 43 pixels
-
-## Pixel Size
-
-Approximately 0.100000457° × 0.100000457°
-
-## Data Type
-
-Float64
-
-## Compression
-
-LZW
-
-## Value Range
-
-Approximately 1.80–5.60 m/s
-
-## Mean
-
-Approximately 2.923 m/s
-
-## Standard Deviation
-
-Approximately 0.684 m/s
-
-## Valid Pixels
-
-Approximately 51.13%
-
-## Data Quality Observations
-
-Approximately 48.87% of the raster cells were identified as NoData/not valid during the initial QGIS inspection.
-
-The missing areas should be investigated before detailed analysis.
-
-## Reference Period
+### Period
 
 2016–2025
 
+### Variables Used
+
+- `u_component_of_wind_10m`
+- `v_component_of_wind_10m`
+
+### Derived Variable
+
+10 m wind speed was calculated from the U and V wind components using:
+
+**Wind speed = √(U² + V²)**
+
+### Access and Processing
+
+The ERA5-Land Hourly dataset was accessed and processed using Google Earth Engine.
+
+Mean 10 m wind speed was calculated for the 2016–2025 period, clipped to the Eastern Cape and exported as a GeoTIFF for use in QGIS.
+
+### Purpose
+
+The dataset represents mean wind-speed conditions across the Eastern Cape.
+
+It will be used to investigate the relationship between wind-energy project locations and wind-resource conditions.
+
+### Geometry Type
+
+Raster
+
+### Raster Bands
+
+1
+
+### Raster Dimensions
+
+75 × 43 pixels
+
+### Pixel Size
+
+Approximately 0.100000457° × 0.100000457°
+
+### Data Type
+
+Float64
+
+### Compression
+
+LZW
+
+### Value Range
+
+Approximately 1.80–5.60 m/s
+
+### Mean
+
+Approximately 2.923 m/s
+
+### Standard Deviation
+
+Approximately 0.684 m/s
+
+### Valid Pixels
+
+Approximately 51.13%
+
+### Data Quality Observations
+
+Approximately 48.87% of raster cells were identified as NoData/not valid during the initial inspection.
+
+These areas should be investigated before detailed spatial analysis.
+
+The relatively coarse spatial resolution should also be considered when comparing the raster with individual renewable-energy project locations.
+
 ---
 
-# 5. Electricity Infrastructure
+# 5. Elevation
 
-## Dataset
+### Dataset
+
+Copernicus DEM GLO-30
+
+### Original Source
+
+Copernicus
+
+### Google Earth Engine Collection
+
+`COPERNICUS/DEM/GLO30`
+
+### Source Link
+
+https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_DEM_GLO30
+
+### Access and Processing
+
+The Copernicus DEM GLO-30 dataset was accessed through Google Earth Engine.
+
+The DEM tiles were mosaicked, clipped to the Eastern Cape and exported as a GeoTIFF at approximately 30 m resolution.
+
+### Purpose
+
+Elevation provides topographic context for investigating whether terrain characteristics are associated with renewable-energy development.
+
+The elevation dataset may also be used to derive additional terrain variables, such as slope, if required during later analysis.
+
+### Geometry Type
+
+Raster
+
+### Resolution
+
+Approximately 30 m
+
+### Data Type
+
+Digital elevation/surface model raster
+
+### Feature Count
+
+Not applicable because this is a raster dataset.
+
+### Key Raster Properties
+
+The final raster dimensions, CRS, elevation range and NoData values will be recorded from the exported layer's QGIS properties.
+
+### Data Quality Observations
+
+The Copernicus DEM GLO-30 product is a Digital Surface Model. Elevation values can therefore represent surface features such as vegetation and buildings in addition to the underlying terrain.
+
+The exported raster should be checked for NoData areas, extent and CRS consistency before analysis.
+
+---
+
+# 6. Electricity Infrastructure
+
+### Dataset
 
 South Africa Electricity Transmission and Distribution Infrastructure
 
-## Source
+### Source
 
 World Bank / EnergyData.info
 
-## Source Link
+### Source Link
 
 https://energydata.info/dataset/south-africa-electricity-transmission-and-distribution-2017
 
-## Purpose
+### Reference Period
 
-Electricity infrastructure provides an important infrastructure context for renewable-energy development.
+2017
+
+### Purpose
+
+Electricity infrastructure data provides infrastructure context for the renewable-energy analysis.
 
 The dataset will be used to investigate the spatial relationship between renewable-energy projects and electricity infrastructure, including transmission lines and substations where available.
 
-It can later support proximity or distance analysis between renewable-energy projects and the electricity network.
+It may also support proximity or distance analysis.
 
-## Geometry Type
+### Geometry Type
 
 Vector
 
-The extracted infrastructure may contain line and/or point features depending on the specific layer used.
+Depending on the specific infrastructure layer used, the data may contain:
 
-## Feature Count
+- Lines representing transmission infrastructure
+- Points representing infrastructure such as substations
 
-To be recorded from the final QGIS layer properties.
+### Feature Count
 
-## Key Attributes
+**To be confirmed from the QGIS layer properties.**
+
+### Key Attributes
 
 Relevant attributes may include:
 
 - Infrastructure type
 - Asset name or identifier
 - Location
-- Other available infrastructure attributes
+- Other available infrastructure information
 
-## Reference Period
+### Data Quality Observations
 
-2017
+The source dataset has a 2017 reference period.
 
-## Data Quality Observations
-
-The dataset has a 2017 reference period.
-
-The coverage of transmission lines and substations should be checked in QGIS, together with any missing infrastructure attributes, before performing proximity analysis.
+Infrastructure coverage and missing attributes should be checked in QGIS before proximity analysis.
 
 ---
 
-# 6. Elevation
+# 7. Eastern Cape Boundary
 
-## Dataset
+### Dataset
 
-Copernicus DEM GLO-30
+FAO GAUL 2015 — Level 1 Administrative Boundaries
 
-## Source
+### Source
 
-Copernicus / Google Earth Engine
+Food and Agriculture Organization of the United Nations (FAO)
 
-## Source Link
+### Google Earth Engine Collection
 
-https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_DEM_GLO30
+`FAO/GAUL/2015/level1`
 
-## Purpose
+### Purpose
 
-Elevation provides topographic context for the renewable-energy analysis.
+The boundary dataset was used to identify and define the Eastern Cape study area in Google Earth Engine.
 
-It will be used to investigate whether elevation varies between areas where renewable-energy projects have developed and other parts of the Eastern Cape.
+It was also used to clip the environmental raster datasets to the provincial boundary.
 
-The elevation raster can also be used later to derive additional terrain information, such as slope.
+### Geometry Type
 
-## Geometry Type
+Polygon
 
-Raster
+### Key Attributes
 
-## Resolution
+The boundary was filtered using:
 
-Approximately 30 m
+- `ADM0_NAME` = South Africa
+- `ADM1_NAME` = Eastern Cape
 
-## Data Type
+### Data Quality Observations
 
-Digital Elevation Model / Digital Surface Model
+The boundary is being used as the study-area boundary for environmental raster processing.
 
-## Raster Information
-
-Final raster dimensions, CRS, elevation range and NoData information will be recorded from the QGIS layer properties after the exported GeoTIFF has been inspected.
-
-## Data Quality Observations
-
-The Copernicus DEM is a Digital Surface Model (DSM). Its elevation values represent the surface and may therefore include features such as vegetation and buildings.
-
-The raster should be checked for NoData values, extent and consistency with the Eastern Cape study area before analysis.
+The final project analysis will use the selected municipal boundary dataset for detailed municipal-level analysis.
 
 ---
 
-# 7. Dataset Summary
+# 8. Dataset Summary
 
-| Dataset | Source | Geometry | Main Purpose |
+| Dataset | Original Source | Geometry | Main Use |
 |---|---|---|---|
-| Renewable Energy EIA Applications | DFFE | Point | Existing renewable-energy development |
-| Municipal Boundaries | MDB | Polygon | Administrative analysis |
-| Solar Radiation | Google Earth Engine / selected solar dataset | Raster | Solar-resource conditions |
-| Wind Speed | Google Earth Engine / selected wind dataset | Raster | Wind-resource conditions |
-| Electricity Infrastructure | World Bank / EnergyData.info | Vector | Grid/infrastructure context |
-| Elevation | Copernicus / Google Earth Engine | Raster | Terrain/topographic context |
+| Renewable Energy EIA Applications | DFFE | Point | Renewable-energy development |
+| Municipal Boundaries | MDB | Polygon | Municipal analysis |
+| ERA5-Land Daily Aggregated | ECMWF | Raster | Solar radiation |
+| ERA5-Land Hourly | ECMWF | Raster | Wind speed |
+| Copernicus DEM GLO-30 | Copernicus | Raster | Elevation/terrain |
+| Electricity Infrastructure | World Bank / EnergyData.info | Vector | Electricity-grid context |
+| FAO GAUL 2015 Level 1 | FAO | Polygon | Eastern Cape study boundary |
 
 ---
 
-# 8. Relationship Between the Datasets
+# 9. Data Processing Workflow
 
-The datasets provide three main categories of information for the project.
+The environmental datasets were processed using Google Earth Engine.
 
-### Observed Development
+The general workflow was:
 
-The renewable-energy EIA dataset shows where renewable-energy development has been recorded.
+**Original dataset**
 
-### Environmental and Terrain Conditions
+↓
 
-Wind speed, solar radiation and elevation provide information about the environmental and physical characteristics of the study area.
+**Google Earth Engine**
 
-### Infrastructure and Administrative Context
+↓
 
-Electricity infrastructure provides information about the relationship between development and the electricity network, while municipal boundaries provide administrative context.
+**Filter to 2016–2025 where applicable**
 
-Together, these datasets will allow the project to move from simply showing where renewable-energy projects exist to investigating the spatial conditions associated with their development.
+↓
+
+**Calculate/derive required variable**
+
+↓
+
+**Clip to Eastern Cape**
+
+↓
+
+**Export as GeoTIFF**
+
+↓
+
+**Open and inspect in QGIS**
+
+The renewable-energy project data, municipal boundaries and electricity infrastructure are used as vector datasets in QGIS.
 
 ---
 
-# 9. Initial Data Assessment
+# 10. Initial Data Quality Assessment
 
-The initial exploration confirms that the project has access to multiple real geospatial datasets relevant to the research question.
+Initial inspection identified several considerations that need to be addressed before detailed analysis.
 
-The renewable-energy dataset provides the observed development locations, while the wind, solar and elevation datasets provide environmental and terrain context.
+### Renewable-energy data
 
-Electricity infrastructure provides an additional infrastructure dimension, and municipal boundaries provide the administrative framework for comparison.
+The renewable-energy dataset contains multiple technologies and project statuses. Attribute completeness and consistency will need to be checked.
 
-The datasets will be further cleaned, validated and standardised before detailed spatial analysis.
+### Solar raster
+
+The initial raster inspection identified NoData areas covering approximately 46.02% of the raster cells.
+
+### Wind raster
+
+The initial raster inspection identified NoData areas covering approximately 48.87% of the raster cells.
+
+### Elevation
+
+The elevation raster requires final inspection of its QGIS layer properties, including its elevation range, CRS and NoData values.
+
+### Electricity infrastructure
+
+The infrastructure dataset has a 2017 reference period, so its temporal difference from more recent renewable-energy development should be considered when interpreting results.
 
 ---
 
-# 10. Week 02 Progress
+# 11. Data Limitations
+
+The datasets have different spatial resolutions, geometry types and reference periods.
+
+The environmental rasters are therefore not directly equivalent to the point-based renewable-energy project data.
+
+The renewable-energy EIA dataset also represents project/application information and should not automatically be interpreted as a complete inventory of operational renewable-energy facilities.
+
+The analysis will account for these differences when comparing datasets.
+
+---
+
+# 12. Week 02 Status
 
 ### Completed
 
-- Renewable-energy project data sourced
-- Renewable-energy records filtered/examined for the Eastern Cape
-- Renewable-energy technology categories identified
-- Solar-radiation raster generated/exported
-- Wind-speed raster generated/exported
-- Elevation dataset selected and prepared
-- Datasets loaded or prepared for QGIS inspection
+- Real renewable-energy project data sourced
+- Eastern Cape renewable-energy records identified
+- Renewable-energy data inspected in QGIS
+- Solar-radiation data processed in Google Earth Engine
+- Wind-speed data processed in Google Earth Engine
+- Elevation data sourced and processed
+- Electricity infrastructure dataset identified
+- Municipal boundary data identified
+- Environmental raster outputs exported for QGIS
 - Initial data-quality observations recorded
 
 ### Remaining Checks
 
-- Confirm final feature counts for vector datasets
-- Record final QGIS properties for the elevation raster
-- Check missing values and NoData areas
-- Confirm CRS consistency
-- Organise data files in the GitHub repository
-- Commit Week 02 work with a clear commit message
+- Confirm municipal-boundary feature count
+- Confirm electricity-infrastructure feature count
+- Record final elevation raster statistics from QGIS
+- Inspect missing values in vector datasets
+- Investigate NoData areas in environmental rasters
+- Ensure all datasets use compatible coordinate reference systems
+- Commit the data note and Week 02 data work to GitHub
 
 ---
 
-# Week 02 Status
+# Week 02 Conclusion
 
-**Data collection and initial inspection — In progress / completed as datasets are verified.**
+The Week 02 datasets provide the foundation for the next stage of the project.
+
+The data represents three major components:
+
+**1. Existing renewable-energy development**
+
+Renewable-energy EIA project locations and attributes.
+
+**2. Physical/environmental conditions**
+
+Solar radiation, wind speed and elevation.
+
+**3. Infrastructure and administrative context**
+
+Electricity infrastructure and municipal boundaries.
+
+These datasets will be integrated in QGIS during the next stages of the project to investigate the spatial characteristics associated with renewable-energy development in the Eastern Cape.
