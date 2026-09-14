@@ -30,7 +30,7 @@ The dataset contains several technology categories, including **Solar PV, Wind, 
 
 | Property | Description |
 |---|---|
-| Feature count | To be confirmed from the final QGIS layer |
+| Feature count | 52 records |
 | Geometry | Polygon |
 | Key fields | Municipality name, municipality code and administrative identifiers |
 | Purpose | Used to analyse how renewable-energy development is distributed between municipalities |
@@ -120,7 +120,7 @@ The exported GeoTIFF was opened and inspected in QGIS. The raster contains one e
 
 | Property | Description |
 |---|---|
-| Feature count | To be confirmed from the final QGIS layer |
+| Feature count | 153 records|
 | Geometry | Line |
 | Key fields | Infrastructure type, voltage, status and other available infrastructure attributes |
 | Purpose | Used to investigate the relationship between renewable-energy development and electricity infrastructure |
