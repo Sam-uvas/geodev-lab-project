@@ -18,8 +18,6 @@ This document describes the datasets collected for the project, their sources, s
 | Purpose | Main dataset used to represent renewable-energy development in the province |
 | Data quality | Some attributes contain missing values and require checking, particularly capacity, project status and date fields |
 
-The dataset contains several technology categories, including **Solar PV, Wind, Wind & Solar, Biomass/Biofuels and Petroleum**.
-
 ---
 
 ## 2. Municipal Boundaries
@@ -55,8 +53,6 @@ The dataset contains several technology categories, including **Solar PV, Wind, 
 | Feature count | Not applicable — raster dataset |
 | Data quality | Initial QGIS inspection identified approximately 53.98% valid pixels |
 
-The daily solar-radiation data was averaged over 2016–2025, clipped to the Eastern Cape and converted to kWh/m²/day before being exported from Google Earth Engine for use in QGIS.
-
 ---
 
 ## 4. Wind Resource
@@ -76,8 +72,6 @@ The daily solar-radiation data was averaged over 2016–2025, clipped to the Eas
 | Output | GeoTIFF |
 | Feature count | Not applicable — raster dataset |
 | Data quality | Initial QGIS inspection identified approximately 48.87% NoData/not-valid cells |
-
-Wind speed was calculated from the U and V wind components and then averaged over 2016–2025. The resulting raster was clipped to the Eastern Cape and exported as a GeoTIFF.
 
 ---
 
@@ -104,9 +98,6 @@ Wind speed was calculated from the U and V wind components and then averaged ove
 | Valid data | Approximately 50.9% of cells |
 | Purpose | Used to investigate the influence of terrain and elevation on renewable-energy development |
 
-The Copernicus DEM is a 30 m Digital Surface Model representing the Earth's surface, including features such as vegetation, buildings and infrastructure. The dataset uses the EGM2008 vertical datum. :contentReference[oaicite:3]{index=3}
-
-The exported GeoTIFF was opened and inspected in QGIS. The raster contains one elevation band and is stored as a GeoTIFF.
 
 ---
 
@@ -125,7 +116,7 @@ The exported GeoTIFF was opened and inspected in QGIS. The raster contains one e
 | Purpose | Used to investigate the relationship between renewable-energy development and electricity infrastructure |
 | Data quality | No issue identified |
 
-The dataset provides historical electricity transmission and distribution infrastructure and is used as infrastructure context for the renewable-energy analysis.
+
 
 ---
 
@@ -162,11 +153,3 @@ The dataset provides historical electricity transmission and distribution infras
 | Eastern Cape Boundary | Polygon | Study-area definition |
 
 ---
-
-## Initial Data Quality Notes
-
-The datasets were obtained from different sources and therefore differ in spatial resolution, temporal coverage and data structure.
-
-The renewable-energy EIA dataset represents **applications**, rather than necessarily representing operational renewable-energy facilities. The ERA5-Land environmental datasets provide relatively coarse spatial information compared with the 30 m elevation dataset. The electricity infrastructure data also has a **2017 reference period**, which should be considered when comparing it with more recent renewable-energy applications.
-
-Further data-quality checks will be carried out in QGIS before the spatial analysis stage.
