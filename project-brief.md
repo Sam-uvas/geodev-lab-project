@@ -290,8 +290,4 @@ Wind and Solar PV represent the majority of the records identified during the in
 
 ---
 
-# Project Status
 
-**Current stage: Week 2 — Data collection and documentation**
-
-The project datasets are being sourced, processed, loaded into QGIS and documented before detailed spatial analysis begins.
