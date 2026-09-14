@@ -2,8 +2,7 @@
 
 ## Renewable Energy Development in the Eastern Cape
 
-This document describes the datasets collected for the project, their sources, structure, and initial data-quality observations. The datasets were obtained from external data providers and processed or inspected using QGIS and Google Earth Engine where applicable.
-
+This document describes the datasets collected for the project, their sources, structure, and initial data-quality observations. 
 ---
 
 ## 1. Renewable Energy EIA Applications
