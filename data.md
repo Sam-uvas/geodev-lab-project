@@ -3,6 +3,7 @@
 ## Renewable Energy Development in the Eastern Cape
 
 This document describes the datasets collected for the project, their sources, structure, and initial data-quality observations. 
+
 ---
 
 ## 1. Renewable Energy EIA Applications
