@@ -191,3 +191,6 @@ The Week 3 data preparation requirements were completed by:
 - Retaining the original source datasets separately from the processed datasets.
 
 The prepared datasets are now ready for the next stage of the Eastern Cape Renewable Energy Opportunity & Development Atlas analysis.
+The processed raster datasets are stored locally in the project's
+`data/processed/` directory. Due to their file sizes, the raster files
+are not uploaded to the GitHub repository.
