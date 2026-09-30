@@ -38,7 +38,7 @@ The data notes document the datasets downloaded for the project and their intend
 
 ## Week 3 — Data Preparation & Quality Checks
 
-The datasets were prepared for analysis through spatial processing and quality checks, including geometry validation and verification of the prepared municipal-level data.
+The datasets were prepared for analysis through spatial processing and quality checks, including geometry validation and verification of the prepared municipal level data.
 
 **[View Week 3 — Data & Quality Checks](documentation/)**
 
@@ -54,7 +54,7 @@ The prepared renewable-energy data was analysed at municipal level to investigat
 
 # Month 1 Result
 
-The analysis shows that renewable-energy projects are **spatially unevenly distributed across the Eastern Cape**. Some municipalities contain substantially more recorded renewable-energy projects than others, indicating spatial concentration rather than an even distribution across the province.
+The analysis shows that renewable-energy projects are **spatially unevenly distributed across the Eastern Cape**. Some municipalities contain substantially more recorded renewable energy projects than others, indicating spatial concentration rather than an even distribution across the province.
 
 This provides a direct answer to the project's spatial-distribution question: **renewable-energy development is concentrated in particular municipalities rather than being uniformly distributed across the Eastern Cape.**
 
