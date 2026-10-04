@@ -60,6 +60,11 @@ This provides a direct answer to the project's spatial-distribution question: **
 
 ---
 
+# Month 2: Development environment and early Python
+
+Week 5: set up Python, VS Code and the terminal. hello.py runs.
+
+
 ## GeoDev Lab Africa
 
 **GeoDev Lab Africa — Cohort One**
