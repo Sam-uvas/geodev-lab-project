@@ -64,7 +64,7 @@ This provides a direct answer to the project's spatial-distribution question: **
 
 Week 5: set up Python, VS Code and the terminal. hello.py runs.
 
-Week 6: The project environment was set up using uv, pandas was added as a dependency and check.py was created to display the pandas version.
+Week 6: set up the project with uv and added pandas. check.py prints the pandas version.
 
 
 ## GeoDev Lab Africa
