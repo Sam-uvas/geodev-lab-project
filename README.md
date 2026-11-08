@@ -72,6 +72,9 @@ Week 8: Used Python's csv.DictReader to inspect the Eastern Cape renewable energ
 
 Week 9: Refactored the renewable-energy data analysis into reusable Python functions to read records, clean numeric values and summarise multiple columns.
 
+## Month 2 Reflection
+This month, I started getting a better understanding of how Python functions work and how they can make tasks easier by breaking them into smaller steps. I still find it a bit challenging to know how to organise bigger workflows and work with different types of data. Working with my renewable energy project has helped me realise that there is more I can do with the data than just creating maps. I can also use Python to explore project capacity, compare values and get a better understanding of renewable energy development across the Eastern Cape.
+
 
 ## GeoDev Lab Africa
 
