@@ -68,6 +68,8 @@ Week 6: set up the project with uv and added pandas. check.py prints the pandas 
 
 Week 7: `analyse.py` reads `wards.csv`, converts each area with `float`, and classifies each ward.
 
+Week 8: Used Python's csv.DictReader to inspect the Eastern Cape renewable energy dataset, summarising MEGAWATT and Shape_Area across 254 records.
+
 
 ## GeoDev Lab Africa
 
