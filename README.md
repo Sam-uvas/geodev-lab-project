@@ -79,7 +79,7 @@ This month, I started getting a better understanding of how Python functions wor
 
 # Month 3: Geospatial Python and automation
 
-- Week 10: GeoPandas. Loaded, checked, joined and mapped my Eastern Cape renewable energy project layer in code.
+Week 10: GeoPandas. Loaded, checked, joined and mapped my Eastern Cape renewable energy project layer in code.
 
 ## GeoDev Lab Africa
 
