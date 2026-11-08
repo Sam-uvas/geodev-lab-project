@@ -70,6 +70,8 @@ Week 7: `analyse.py` reads `wards.csv`, converts each area with `float`, and cla
 
 Week 8: Used Python's csv.DictReader to inspect the Eastern Cape renewable energy dataset, summarising MEGAWATT and Shape_Area across 254 records.
 
+Week 9: Refactored the renewable-energy data analysis into reusable Python functions to read records, clean numeric values and summarise multiple columns.
+
 
 ## GeoDev Lab Africa
 
