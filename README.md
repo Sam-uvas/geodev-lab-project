@@ -84,7 +84,3 @@ Week 10: GeoPandas. Loaded, checked, joined and mapped my Eastern Cape renewable
 ## GeoDev Lab Africa
 
 **GeoDev Lab Africa — Cohort One**
-
-## Month 3: geospatial Python and automation
-
-- Week 10: GeoPandas. Loaded, checked, joined and mapped my Eastern Cape renewable energy project layer in code.
